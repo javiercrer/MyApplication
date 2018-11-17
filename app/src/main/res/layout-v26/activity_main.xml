@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
+        android:src="@drawable/fondo"
+        android:scaleType = "centerCrop" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="123dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="89dp"
+            android:layout_marginRight="89dp"
+            android:contentDescription="@string/contentDescription"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo2" />
+
+        <LinearLayout
+            android:layout_width="179dp"
+            android:layout_height="243dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="38dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblNombre"
+                android:layout_width="131dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="175dp"
+                android:contentDescription="@string/contentDescription"
+                android:text="@string/lblNombre" />
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="203dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="193dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:autofillHints=""
+                android:contentDescription="@string/contentDescription" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

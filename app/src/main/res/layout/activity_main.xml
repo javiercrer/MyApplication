@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
+        android:src="@drawable/fondo"
+        android:scaleType = "centerCrop" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="123dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="89dp"
+            android:layout_marginRight="89dp"
+            android:contentDescription="@string/contentDescription"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo2" />
+
+        <LinearLayout
+            android:layout_width="177dp"
+            android:layout_height="261dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="170dp"
+            android:orientation="vertical"
+            android:layout_marginStart="70dp">
+
+            <TextView
+                android:id="@+id/lblNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/contentDescription"
+                android:text="@string/lblNombre" />
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="203dp"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:contentDescription="@string/contentDescription"
+                android:ems="10"
+                android:inputType="text|textPersonName"
+                tools:targetApi="o" />
+
+            <TextView
+                android:id="@+id/lblEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lblEmail" />
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/lblTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lblTelefono" />
+
+            <EditText
+                android:id="@+id/txtTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:importantForAutofill="no" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btnSiguiente" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

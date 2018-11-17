@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Belardo &amp; Parrondo</string>
+    <string name="lblNombre">Nombre y Apellido</string>
+    <string name="lblEmail">E-mail</string>
+    <string name="lblTelefono">Teléfono</string>
+    <string name="btnSiguiente">Siguiente</string>
+    <string name="contentDescription">contentDescription</string>
+</resources>
