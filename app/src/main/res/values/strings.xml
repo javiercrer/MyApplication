@@ -5,4 +5,8 @@
     <string name="lblTelefono">Teléfono</string>
     <string name="btnSiguiente">Siguiente</string>
     <string name="contentDescription">contentDescription</string>
+    <string name="bienvenido">Bienvenido/a</string>
+    <string name="servicios">ALQUILERES | VENTAS | TASACIONES</string>
+    <string name="seleccionProfesional">SELECCIONE PROFESIONAL</string>
+    <dimen name="margin_top">50dip</dimen>
 </resources>

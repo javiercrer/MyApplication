@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/contentDescription"
-        android:src="@drawable/fondo"
-        android:scaleType = "centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,37 +22,36 @@
             android:id="@+id/imageView2"
             android:layout_width="150dp"
             android:layout_height="123dp"
+            android:layout_marginTop="50dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="89dp"
-            android:layout_marginRight="89dp"
+            android:layout_centerInParent="true"
             android:contentDescription="@string/contentDescription"
             android:scaleType="centerCrop"
             android:src="@drawable/logo2" />
 
         <LinearLayout
-            android:layout_width="177dp"
-            android:layout_height="261dp"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="170dp"
-            android:orientation="vertical"
-            android:layout_marginStart="70dp">
+            android:layout_centerInParent="true"
+            android:layout_marginTop="240dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/lblNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/contentDescription"
-                android:text="@string/lblNombre" />
+                android:text="@string/lblNombre"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/txtNombre"
                 android:layout_width="203dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:autofillHints=""
+                android:background="@color/colorWhite"
                 android:contentDescription="@string/contentDescription"
                 android:ems="10"
                 android:inputType="text|textPersonName"
@@ -62,37 +61,55 @@
                 android:id="@+id/lblEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/lblEmail" />
+                android:text="@string/lblEmail"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/txtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@color/colorWhite"
                 android:ems="10"
-                android:inputType="textEmailAddress"
-                android:importantForAutofill="no" />
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress" />
 
             <TextView
                 android:id="@+id/lblTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/lblTelefono" />
+                android:text="@string/lblTelefono"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/txtTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
                 android:ems="10"
-                android:inputType="text"
-                android:importantForAutofill="no" />
+                android:importantForAutofill="no"
+                android:inputType="text" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnSiguiente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/btnSiguiente" />
+                android:layout_marginTop="55dip"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="continuar"
+                android:text="@string/btnSiguiente"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
 
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageViewBig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:srcCompat="@drawable/barra_inferior" />
 
     </RelativeLayout>
 

@@ -18,18 +18,112 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/btnVisitas"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_visitas" />
+
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="150dp"
             android:layout_height="123dp"
+            android:layout_marginTop="50dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="89dp"
-            android:layout_marginRight="89dp"
+            android:layout_centerInParent="true"
             android:contentDescription="@string/contentDescription"
             android:scaleType="centerCrop"
             android:src="@drawable/logo2" />
+
+        <LinearLayout
+            android:layout_width="258dp"
+            android:layout_height="308dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="61dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtBienvenidos"
+                android:layout_width="match_parent"
+                android:layout_height="13dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/bienvenido"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtInstituto"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="BELARDO &amp; PARRONDO"
+                android:textColor="@color/colorWhite"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btnNosotros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_nosotros"
+                android:onClick="mostrarNosotros"
+                tools:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/btnPropiedades"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_propiedades"
+                android:onClick="mostrarPropiedades"
+                tools:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/btnVisitenos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/brn_visitanos"
+                android:onClick="mostrarNotificacion"
+                tools:layout_height="5dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageViewBig2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:srcCompat="@drawable/barra_inferior" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_login"
+            android:onClick="cerrarSesion" />
+
     </RelativeLayout>
 </FrameLayout>
