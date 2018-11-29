@@ -134,7 +134,7 @@ public class InstitutoActivity extends AppCompatActivity {
         //Activity q se lanza al hacer click en la notificacion
 
         //Habria que hacer una pantalla donde muestre el detalle de la nueva propiedad
-        Intent i = new Intent(this, SeleccionarProfesionalActivity.class);
+        Intent i = new Intent(this, DetallePropiedadActivity.class);
 
         PendingIntent resultPendingIntent =
                 PendingIntent.getActivity(
