@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeleccionarProfesionalActivity">
+    tools:context=".SeleccionarFechaActivity">
 
     <ImageView
         android:id="@+id/imageView6"
@@ -25,26 +25,53 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/lblProfesional"
+            android:id="@+id/lblFecha"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/seleccionProfesional"
+            android:text="@string/seleccionFecha"
             android:textColor="@android:color/white" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/profesionalesLayout"
         android:layout_width="288dp"
-        android:layout_height="283dp"
+        android:layout_height="33dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="135dp"
-        android:orientation="vertical"/>
+        android:layout_marginTop="112dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lblProfesional"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="110dp" />
+
+    <!--com.prolificinteractive.materialcalendarview.MaterialCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/calendarView"
+        android:layout_width="306dp"
+        android:layout_height="314dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="107dp"
+        app:mcv_selectionColor="#00F"
+        app:mcv_showOtherDates="all" /-->
 
     <Button
-        android:id="@+id/btnSiguiente"
+        android:id="@+id/btnSiguiente8"
         android:layout_width="182dp"
         android:layout_height="38dp"
         android:layout_alignParentBottom="true"

@@ -40,14 +40,6 @@ public class InstitutoActivity extends AppCompatActivity {
         ImageView iv_background = (ImageView) findViewById(R.id.imageView3);
         iv_background.setImageBitmap(bmp);
 
-        /*Button butttonPropiedades = (Button) findViewById(R.id.btnNosotros);
-        Drawable imagePressedProp=(Drawable)getResources().getDrawable(R.drawable.btn_propiedades);
-        butttonPropiedades.setBackground(imagePressedProp);
-
-        Button butttonNosotros = (Button) findViewById(R.id.btnPropiedades);
-        Drawable imagePressedNos=(Drawable)getResources().getDrawable(R.drawable.btn_nosotros);
-        butttonNosotros.setBackground(imagePressedNos);*/
-
         /*StateListDrawable states = new StateListDrawable();
         states.addState(new int[] {android.R.attr.state_pressed},getResources().getDrawable(R.drawable.btn_nosotros));
         states.addState(new int[] {android.R.attr.state_focused},getResources().getDrawable(R.drawable.btn_nosotros_pressed));
@@ -74,6 +66,23 @@ public class InstitutoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        Button butttonPropiedades = (Button) findViewById(R.id.btnPropiedades);
+        Drawable imagePressedProp=(Drawable)getResources().getDrawable(R.drawable.btn_propiedades);
+        butttonPropiedades.setBackground(imagePressedProp);
+
+        Button butttonNosotros = (Button) findViewById(R.id.btnNosotros);
+        Drawable imagePressedNos=(Drawable)getResources().getDrawable(R.drawable.btn_nosotros);
+        butttonNosotros.setBackground(imagePressedNos);
+
+        Button butttonVisitanos= (Button) findViewById(R.id.btnVisitenos);
+        Drawable imagePressedVis=(Drawable)getResources().getDrawable(R.drawable.btn_visitanos);
+        butttonVisitanos.setBackground(imagePressedVis);
     }
 
     public void cerrarSesion(View view) {

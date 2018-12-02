@@ -8,5 +8,15 @@
     <string name="bienvenido">Bienvenido/a</string>
     <string name="servicios">ALQUILERES | VENTAS | TASACIONES</string>
     <string name="seleccionProfesional">SELECCIONE PROFESIONAL</string>
+    <string name="seleccionFecha">SELECCIONE FECHA</string>
+    <string name="seleccionTurno">SELECCIONE DIA</string>
+    <string name="correo">
+        <![CDATA[
+            Un correo será enviado a su casilla de<br>
+            E-mail *******@***.com para la<br>
+            confirmación de tu Visita
+        ]]>
+    </string>
+    <string name="btnConfirmar">Confirmar</string>
     <dimen name="margin_top">50dip</dimen>
 </resources>

@@ -38,11 +38,11 @@ public class DetallePropiedadActivity extends AppCompatActivity {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent skipIntent = new Intent(v.getContext(), SeleccionarProfesionalActivity.class);
-            skipIntent.putExtra(KEY_DIRECCION, propiedadDTO.getDireccion());
-            skipIntent.putExtra(KEY_LOCALIDAD, propiedadDTO.getLocalidad());
-            skipIntent.putExtra(KEY_DESCRIPCION, propiedadDTO.getDescripcion());
-            v.getContext().startActivity(skipIntent);
+                Intent skipIntent = new Intent(v.getContext(), SeleccionarProfesionalActivity.class);
+                skipIntent.putExtra(KEY_DIRECCION, propiedadDTO.getDireccion());
+                skipIntent.putExtra(KEY_LOCALIDAD, propiedadDTO.getLocalidad());
+                skipIntent.putExtra(KEY_DESCRIPCION, propiedadDTO.getDescripcion());
+                v.getContext().startActivity(skipIntent);
             }
         });
     }

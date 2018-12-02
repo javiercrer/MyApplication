@@ -31,7 +31,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".NosotrosActivity" />
-        <activity android:name=".DetallePropiedadActivity"></activity>
+        <activity android:name=".DetallePropiedadActivity" />
+        <activity android:name=".SeleccionarFechaActivity" />
+        <activity android:name=".SeleccionarTurnoActivity" />
+        <activity android:name=".TurnoAConfirmarActivity" />
+        <activity android:name=".GraciasActivity" />
+        <activity android:name=".CalendarioVisitasActivity"></activity>
     </application>
 
 </manifest>

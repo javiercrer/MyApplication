@@ -30,13 +30,26 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/btn_visitas" />
 
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_login"
+            android:onClick="cerrarSesion" />
+
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="150dp"
-            android:layout_height="123dp"
-            android:layout_marginTop="50dp"
+            android:layout_width="210dp"
+            android:layout_height="160dp"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
+            android:layout_marginTop="50dp"
             android:contentDescription="@string/contentDescription"
             android:scaleType="centerCrop"
             android:src="@drawable/logo2" />
@@ -77,31 +90,28 @@
             <Button
                 android:id="@+id/btnNosotros"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="4dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_nosotros"
-                android:onClick="mostrarNosotros"
-                tools:layout_height="5dp" />
+                android:onClick="mostrarNosotros" />
 
             <Button
                 android:id="@+id/btnPropiedades"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="4dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_propiedades"
-                android:onClick="mostrarPropiedades"
-                tools:layout_height="5dp" />
+                android:onClick="mostrarPropiedades" />
 
             <Button
                 android:id="@+id/btnVisitenos"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/brn_visitanos"
-                android:onClick="mostrarNotificacion"
-                tools:layout_height="5dp" />
+                android:background="@drawable/btn_visitanos"
+                android:onClick="mostrarNotificacion" />
 
         </LinearLayout>
 
@@ -111,19 +121,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             app:srcCompat="@drawable/barra_inferior" />
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_login"
-            android:onClick="cerrarSesion" />
 
     </RelativeLayout>
 </FrameLayout>

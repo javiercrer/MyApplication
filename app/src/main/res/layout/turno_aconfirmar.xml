@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TurnoAConfirmarActivity">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/contentDescription"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="210dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/contentDescription"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo2" />
+
+    <LinearLayout
+        android:layout_width="281dp"
+        android:layout_height="213dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lblProfesional7"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/arqColor"
+            android:gravity="center"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/lblTurno"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/turnoColor" />
+
+        <TextView
+            android:id="@+id/lblCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="124dp"
+            android:background="@color/correoColor" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnConfirmar"
+        android:layout_width="182dp"
+        android:layout_height="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:background="@color/colorPrimaryDark"
+        android:scaleType="centerCrop"
+        android:text="@string/btnConfirmar"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/imageViewBig2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:srcCompat="@drawable/barra_inferior" />
+
+</RelativeLayout>

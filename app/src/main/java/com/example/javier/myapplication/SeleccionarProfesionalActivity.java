@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Display;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
@@ -21,6 +22,11 @@ import static com.example.javier.myapplication.R.color.colorWhite;
 
 public class SeleccionarProfesionalActivity extends AppCompatActivity {
 
+    public static final String KEY_PROFESIONAL = "profesional";
+    String direccion;
+    String localidad;
+    String descripcion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +34,11 @@ public class SeleccionarProfesionalActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.seleccionar_profesional);
+
+        Intent intent = getIntent();
+        direccion = intent.getStringExtra(PropiedadesAdapter.KEY_DIRECCION);
+        localidad = intent.getStringExtra(PropiedadesAdapter.KEY_LOCALIDAD);
+        descripcion = intent.getStringExtra(PropiedadesAdapter.KEY_DESCRIPCION);
 
         /* adapt the image to the size of the display */
         Display display = getWindowManager().getDefaultDisplay();
@@ -56,6 +67,18 @@ public class SeleccionarProfesionalActivity extends AppCompatActivity {
         params1.width=widthButton;
         btnProf1.setLayoutParams(params1);
 
+        btnProf1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent skipIntent = new Intent(v.getContext(), SeleccionarFechaActivity.class);
+                skipIntent.putExtra(KEY_PROFESIONAL, "ARQ. LUCIANA BELARDO");
+                skipIntent.putExtra(PropiedadesAdapter.KEY_DIRECCION, direccion);
+                skipIntent.putExtra(PropiedadesAdapter.KEY_LOCALIDAD, localidad);
+                skipIntent.putExtra(PropiedadesAdapter.KEY_DESCRIPCION, descripcion);
+                v.getContext().startActivity(skipIntent);
+            }
+        });
+
         //prof1.setId(99);
         profesionalesLayout.addView(btnProf1);
 
@@ -71,13 +94,18 @@ public class SeleccionarProfesionalActivity extends AppCompatActivity {
         params2.width=widthButton;
         btnProf2.setLayoutParams(params2);
 
+        btnProf2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent skipIntent = new Intent(v.getContext(), SeleccionarFechaActivity.class);
+                skipIntent.putExtra(KEY_PROFESIONAL, "ARQ. PABLO BELARDO");
+                skipIntent.putExtra(PropiedadesAdapter.KEY_DIRECCION, direccion);
+                skipIntent.putExtra(PropiedadesAdapter.KEY_LOCALIDAD, localidad);
+                skipIntent.putExtra(PropiedadesAdapter.KEY_DESCRIPCION, descripcion);
+                v.getContext().startActivity(skipIntent);
+            }
+        });
+
         profesionalesLayout.addView(btnProf2);
-
-        Intent intent = getIntent();
-        String direccion = intent.getStringExtra(PropiedadesAdapter.KEY_DIRECCION);
-        String localidad = intent.getStringExtra(PropiedadesAdapter.KEY_LOCALIDAD);
-        String descripcion = intent.getStringExtra(PropiedadesAdapter.KEY_DESCRIPCION);
-
-
     }
 }

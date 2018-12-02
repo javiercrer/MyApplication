@@ -5,4 +5,8 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorWhite">#ffffff</color>
     <color name="introColor">#60534a</color>
+    <color name="arqColor">#372a26</color>
+    <color name="turnoColor">#63584d</color>
+    <color name="correoColor">#09786d</color>
+    <color name="turnoSeleccionado">#05b2a1</color>
 </resources>
