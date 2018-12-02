@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:id="@+id/columna_1"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/columna1_Visitas" />
+
+    <TextView
+        android:id="@+id/columna_2"
+        android:layout_width="43dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/columna2_Visitas" />
+
+    <TextView
+        android:id="@+id/columna_3"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/columna3_Visitas" />
+
+    <TextView
+        android:id="@+id/columna_4"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/columna4_Visitas" />
+</LinearLayout>

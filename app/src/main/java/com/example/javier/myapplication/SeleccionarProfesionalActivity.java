@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import static com.example.javier.myapplication.R.color.colorWhite;
+import com.example.javier.myapplication.view.adapters.PropiedadesAdapter;
 
 public class SeleccionarProfesionalActivity extends AppCompatActivity {
 

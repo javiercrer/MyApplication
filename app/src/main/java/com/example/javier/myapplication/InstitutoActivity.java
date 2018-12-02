@@ -40,23 +40,23 @@ public class InstitutoActivity extends AppCompatActivity {
         ImageView iv_background = (ImageView) findViewById(R.id.imageView3);
         iv_background.setImageBitmap(bmp);
 
-        /*StateListDrawable states = new StateListDrawable();
-        states.addState(new int[] {android.R.attr.state_pressed},getResources().getDrawable(R.drawable.btn_nosotros));
-        states.addState(new int[] {android.R.attr.state_focused},getResources().getDrawable(R.drawable.btn_nosotros_pressed));
-        states.addState(new int[] { },getResources().getDrawable(R.drawable.btn_nosotros));*/
-        /*Button butttonPropiedades = (Button) findViewById(R.id.btnPropiedades);
-        butttonPropiedades.setOnClickListener(new View.OnClickListener() {
+        Button btnCalendarioVisitas = (Button) findViewById(R.id.btnVisitas);
+        btnCalendarioVisitas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(v.getBackground().getConstantState().equals(getResources().getDrawable(R.drawable.btn_propiedades).getConstantState())) {
-                    Drawable imagePressed=(Drawable)getResources().getDrawable(R.drawable.btn_propiedades_pressed);
-                    v.setBackground(imagePressed);
-                } else {
-                    Drawable image=(Drawable)getResources().getDrawable(R.drawable.btn_propiedades);
-                    v.setBackground(image);
-                }
+                Intent i = new Intent(v.getContext(), CalendarioVisitasActivity.class);
+                startActivity(i);
             }
-        });*/
+        });
+
+        Button btnCerrarSesion = (Button) findViewById(R.id.btnLogin);
+        btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent i = new Intent(view.getContext(), MainActivity.class);
+               startActivity(i);
+           }
+        });
 
         ImageView imageBig = (ImageView) findViewById(R.id.imageViewBig2);
         imageBig.setOnClickListener(new View.OnClickListener(){
@@ -83,11 +83,6 @@ public class InstitutoActivity extends AppCompatActivity {
         Button butttonVisitanos= (Button) findViewById(R.id.btnVisitenos);
         Drawable imagePressedVis=(Drawable)getResources().getDrawable(R.drawable.btn_visitanos);
         butttonVisitanos.setBackground(imagePressedVis);
-    }
-
-    public void cerrarSesion(View view) {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
     }
 
     public void mostrarNosotros(View v) {

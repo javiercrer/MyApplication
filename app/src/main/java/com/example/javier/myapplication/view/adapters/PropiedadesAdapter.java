@@ -1,4 +1,4 @@
-package com.example.javier.myapplication;
+package com.example.javier.myapplication.view.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.javier.myapplication.R;
+import com.example.javier.myapplication.SeleccionarProfesionalActivity;
 import com.example.javier.myapplication.models.PropiedadDTO;
 
 import java.util.List;

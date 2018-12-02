@@ -63,13 +63,13 @@ public class SeleccionarTurnoActivity extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-            for (int j=0;j<lista.getChildCount();j++){
-                lista.getChildAt(j).setBackgroundColor(Color.WHITE);
-                ((TextView)lista.getChildAt(j)).setTextColor(Color.GRAY);
-            }
-            selectedAppointment = turnos[i];
-            view.setBackgroundColor(getResources().getColor(R.color.turnoSeleccionado));
-            ((TextView)lista.getChildAt(i)).setTextColor(Color.WHITE);
+                for (int j=0;j<lista.getChildCount();j++){
+                    lista.getChildAt(j).setBackgroundColor(Color.WHITE);
+                    ((TextView)lista.getChildAt(j)).setTextColor(Color.GRAY);
+                }
+                selectedAppointment = turnos[i];
+                view.setBackgroundColor(getResources().getColor(R.color.turnoSeleccionado));
+                ((TextView)lista.getChildAt(i)).setTextColor(Color.WHITE);
             }
         });
 
@@ -77,23 +77,23 @@ public class SeleccionarTurnoActivity extends AppCompatActivity {
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(selectedAppointment!=null) {
-                    /*AlertDialog alertDialog = new AlertDialog.Builder(view.getContext()).create();
-                    alertDialog.setTitle("Turno seleccionado");
-                    alertDialog.setMessage(selectedAppointment);
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                    alertDialog.show();*/
-                    Intent skipIntent = new Intent(view.getContext(), TurnoAConfirmarActivity.class);
-                    skipIntent.putExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL, profesional);
-                    skipIntent.putExtra(SeleccionarFechaActivity.KEY_FECHA, selectedCalendar);
-                    skipIntent.putExtra(KEY_TURNO, selectedAppointment);
-                    view.getContext().startActivity(skipIntent);
-                }
+            if(selectedAppointment!=null) {
+                /*AlertDialog alertDialog = new AlertDialog.Builder(view.getContext()).create();
+                alertDialog.setTitle("Turno seleccionado");
+                alertDialog.setMessage(selectedAppointment);
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                alertDialog.show();*/
+                Intent skipIntent = new Intent(view.getContext(), TurnoAConfirmarActivity.class);
+                skipIntent.putExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL, profesional);
+                skipIntent.putExtra(SeleccionarFechaActivity.KEY_FECHA, selectedCalendar);
+                skipIntent.putExtra(KEY_TURNO, selectedAppointment);
+                view.getContext().startActivity(skipIntent);
+            }
             }
         });
 

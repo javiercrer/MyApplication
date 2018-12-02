@@ -40,8 +40,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
-            android:background="@drawable/btn_login"
-            android:onClick="cerrarSesion" />
+            android:background="@drawable/btn_login" />
 
         <ImageView
             android:id="@+id/imageView4"

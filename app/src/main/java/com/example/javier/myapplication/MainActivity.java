@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void continuar(View view){
-        //Toast.makeText(this, "Calculando...", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(this, InstitutoActivity.class);
         startActivity(i);
     }

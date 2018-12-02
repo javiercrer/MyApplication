@@ -18,5 +18,16 @@
         ]]>
     </string>
     <string name="btnConfirmar">Confirmar</string>
+    <string name="calendarioVisitas">CALENDARIO DE VISITAS</string>
+    <string name="btnCancelar">Cancelar</string>
     <dimen name="margin_top">50dip</dimen>
+
+    <string name="columna1_Visitas">Fecha</string>
+    <string name="columna2_Visitas">Hora</string>
+    <string name="columna3_Visitas">Profesional</string>
+    <string name="columna4_Visitas">Estado</string>
+
+    <string name="msjCancelacion">¿Esta seguro que desea cancelar este turno?</string>
+    <string name="btnAceptarCancelacion">Aceptar</string>
+    <string name="btnCancelarCancelacion">Cancelar</string>
 </resources>
