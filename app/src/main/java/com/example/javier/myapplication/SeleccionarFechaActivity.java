@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -17,13 +18,15 @@ import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
+import com.example.javier.myapplication.models.ProfesionalDTO;
+import com.example.javier.myapplication.models.UsuarioDTO;
+
 import java.util.Calendar;
-import java.util.Date;
 
 public class SeleccionarFechaActivity extends AppCompatActivity {
 
-    String profesional;
+    ProfesionalDTO profesional;
+    UsuarioDTO usuarioDTO;
     /*@BindView(R.id.calendarView)
     MaterialCalendarView widget;*/
 
@@ -45,16 +48,17 @@ public class SeleccionarFechaActivity extends AppCompatActivity {
         display.getSize(size);
         Bitmap bmp = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
                 getResources(),R.drawable.fondo),size.x,size.y,true);
-        ImageView iv_background = (ImageView) findViewById(R.id.imageView6);
+        ImageView iv_background = findViewById(R.id.imageView6);
         iv_background.setImageBitmap(bmp);
 
         Intent intent = getIntent();
-        profesional = intent.getStringExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL);
+        profesional = (ProfesionalDTO) intent.getSerializableExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL);
+        usuarioDTO = (UsuarioDTO) intent.getSerializableExtra(LoginActivity.KEY_USUARIO);
 
-        TextView txtProfesional = (TextView) findViewById(R.id.lblProfesional);
-        txtProfesional.setText(profesional);
+        TextView txtProfesional = findViewById(R.id.lblProfesional);
+        txtProfesional.setText(profesional.getNombre());
 
-        CalendarView calendarView = (CalendarView) findViewById(R.id.calendarView);
+        CalendarView calendarView = findViewById(R.id.calendarView);
             calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
@@ -63,26 +67,15 @@ public class SeleccionarFechaActivity extends AppCompatActivity {
             }
         });
 
-        Button btnSiguiente = (Button) findViewById(R.id.btnSiguiente8);
+        Button btnSiguiente = findViewById(R.id.btnSiguiente8);
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(selectedCalendar!=null) {
-                    /*SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
-
-                    AlertDialog alertDialog = new AlertDialog.Builder(view.getContext()).create();
-                    alertDialog.setTitle("Dia Seleccionado");
-                    alertDialog.setMessage(fmt.format(selectedCalendar.getTime()));
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                    alertDialog.show();*/
                     Intent skipIntent = new Intent(view.getContext(), SeleccionarTurnoActivity.class);
                     skipIntent.putExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL, profesional);
                     skipIntent.putExtra(KEY_FECHA, selectedCalendar);
+                    skipIntent.putExtra(LoginActivity.KEY_USUARIO, usuarioDTO);
                     view.getContext().startActivity(skipIntent);
                 }
             }
@@ -106,6 +99,15 @@ public class SeleccionarFechaActivity extends AppCompatActivity {
                 .setMinimumDate(min)
                 .setMaximumDate(max)
                 .commit();*/
+
+        ImageView imageBig = findViewById(R.id.imageViewBig2);
+        imageBig.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://www.bigdiseno.com/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
     }
 /*
     private static class PrimeDayDisableDecorator implements DayViewDecorator {

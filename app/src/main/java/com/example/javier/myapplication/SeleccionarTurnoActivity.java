@@ -21,11 +21,15 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.javier.myapplication.models.ProfesionalDTO;
+import com.example.javier.myapplication.models.UsuarioDTO;
+
 import java.util.Calendar;
 
 public class SeleccionarTurnoActivity extends AppCompatActivity {
 
-    String profesional;
+    ProfesionalDTO profesional;
+    UsuarioDTO usuarioDTO;
     Calendar selectedCalendar;
     String selectedAppointment;
     public static final String KEY_TURNO = "turno";
@@ -44,19 +48,20 @@ public class SeleccionarTurnoActivity extends AppCompatActivity {
         display.getSize(size);
         Bitmap bmp = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
                 getResources(),R.drawable.fondo),size.x,size.y,true);
-        ImageView iv_background = (ImageView) findViewById(R.id.imageView6);
+        ImageView iv_background = findViewById(R.id.imageView6);
         iv_background.setImageBitmap(bmp);
 
         Intent intent = getIntent();
-        profesional = intent.getStringExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL);
-        selectedCalendar = (Calendar) getIntent().getSerializableExtra(SeleccionarFechaActivity.KEY_FECHA);
+        profesional = (ProfesionalDTO) intent.getSerializableExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL);
+        usuarioDTO = (UsuarioDTO) intent.getSerializableExtra(LoginActivity.KEY_USUARIO);
+        selectedCalendar = (Calendar) intent.getSerializableExtra(SeleccionarFechaActivity.KEY_FECHA);
 
-        TextView txtProfesional = (TextView) findViewById(R.id.lblProfesional6);
-        txtProfesional.setText(profesional);
+        TextView txtProfesional = findViewById(R.id.lblProfesional6);
+        txtProfesional.setText(profesional.getNombre());
 
         final String[] turnos = {"8:15", "8:30", "8:45"};
 
-        final ListView lista = (ListView)findViewById(R.id.listView6);
+        final ListView lista = findViewById(R.id.listView6);
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, turnos);
         lista.setAdapter(adaptador);
 
@@ -73,31 +78,32 @@ public class SeleccionarTurnoActivity extends AppCompatActivity {
             }
         });
 
-        Button btnSiguiente = (Button) findViewById(R.id.btnSiguiente9);
+        Button btnSiguiente = findViewById(R.id.btnSiguiente9);
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            if(selectedAppointment!=null) {
-                /*AlertDialog alertDialog = new AlertDialog.Builder(view.getContext()).create();
-                alertDialog.setTitle("Turno seleccionado");
-                alertDialog.setMessage(selectedAppointment);
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-                alertDialog.show();*/
-                Intent skipIntent = new Intent(view.getContext(), TurnoAConfirmarActivity.class);
-                skipIntent.putExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL, profesional);
-                skipIntent.putExtra(SeleccionarFechaActivity.KEY_FECHA, selectedCalendar);
-                skipIntent.putExtra(KEY_TURNO, selectedAppointment);
-                view.getContext().startActivity(skipIntent);
-            }
+                if(selectedAppointment!=null) {
+                    /*AlertDialog alertDialog = new AlertDialog.Builder(view.getContext()).create();
+                    alertDialog.setTitle("Turno seleccionado");
+                    alertDialog.setMessage(selectedAppointment);
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                    alertDialog.show();*/
+                    Intent skipIntent = new Intent(view.getContext(), TurnoAConfirmarActivity.class);
+                    skipIntent.putExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL, profesional);
+                    skipIntent.putExtra(SeleccionarFechaActivity.KEY_FECHA, selectedCalendar);
+                    skipIntent.putExtra(KEY_TURNO, selectedAppointment);
+                    skipIntent.putExtra(LoginActivity.KEY_USUARIO, usuarioDTO);
+                    view.getContext().startActivity(skipIntent);
+                }
             }
         });
 
-        ImageView imageBig = (ImageView) findViewById(R.id.imageViewBig2);
+        ImageView imageBig = findViewById(R.id.imageViewBig2);
         imageBig.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Uri uri = Uri.parse("http://www.bigdiseno.com/");

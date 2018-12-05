@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Belardo &amp; Parrondo</string>
+    <string name="application_name">Big Diseno</string>
     <string name="lblNombre">Nombre y Apellido</string>
     <string name="lblEmail">E-mail</string>
     <string name="lblTelefono">Teléfono</string>

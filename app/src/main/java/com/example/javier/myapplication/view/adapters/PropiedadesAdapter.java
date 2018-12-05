@@ -43,9 +43,9 @@ public class PropiedadesAdapter extends RecyclerView.Adapter<PropiedadesAdapter.
         // this method will bind the data to the ViewHolder from whence it'll be shown to other Views
 
         final PropiedadDTO propiedadDTO = propiedadesList.get(position);
-        holder.direccion.setText(propiedadDTO.getDireccion());
-        holder.localidad.setText(propiedadDTO.getLocalidad());
-        holder.descripcion.setText(propiedadDTO.getDescripcion());
+        holder.direccion.setText(propiedadDTO.getDireccion() + " - " + propiedadDTO.getLocalidad());
+        //holder.localidad.setText(propiedadDTO.getLocalidad());
+        //holder.descripcion.setText(propiedadDTO.getDescripcion());
 
         /*Picasso.with(context)
                 .load(developersList.getAvatar_url())
@@ -75,8 +75,6 @@ public class PropiedadesAdapter extends RecyclerView.Adapter<PropiedadesAdapter.
         // define the View objects
 
         public TextView direccion;
-        public TextView localidad;
-        public TextView descripcion;
         public LinearLayout linearLayout;
 
         //public LinearLayout linearLayout;
@@ -87,8 +85,6 @@ public class PropiedadesAdapter extends RecyclerView.Adapter<PropiedadesAdapter.
             // initialize the View objects
 
             direccion = (TextView) itemView.findViewById(R.id.itemDireccion);
-            localidad = (TextView) itemView.findViewById(R.id.itemLocalidad);
-            descripcion = (TextView) itemView.findViewById(R.id.itemDescripcion);
             linearLayout = (LinearLayout) itemView.findViewById(R.id.linearLayout);
         }
 

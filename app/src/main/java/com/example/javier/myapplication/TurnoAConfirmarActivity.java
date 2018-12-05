@@ -19,12 +19,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.javier.myapplication.models.ProfesionalDTO;
+import com.example.javier.myapplication.models.UsuarioDTO;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class TurnoAConfirmarActivity extends AppCompatActivity {
 
-    String profesional;
+    ProfesionalDTO profesional;
+    UsuarioDTO usuarioDTO;
     Calendar selectedCalendar;
     String selectedAppointment;
 
@@ -46,11 +50,13 @@ public class TurnoAConfirmarActivity extends AppCompatActivity {
         iv_background.setImageBitmap(bmp);
 
         Intent intent = getIntent();
-        profesional = intent.getStringExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL);
+        profesional = (ProfesionalDTO) intent.getSerializableExtra(SeleccionarProfesionalActivity.KEY_PROFESIONAL);
         TextView txtProfesional = (TextView) findViewById(R.id.lblProfesional7);
-        txtProfesional.setText(profesional);
+        txtProfesional.setText(profesional.getNombre());
 
-        selectedCalendar = (Calendar) getIntent().getSerializableExtra(SeleccionarFechaActivity.KEY_FECHA);
+        usuarioDTO = (UsuarioDTO) intent.getSerializableExtra(LoginActivity.KEY_USUARIO);
+
+        selectedCalendar = (Calendar) intent.getSerializableExtra(SeleccionarFechaActivity.KEY_FECHA);
         selectedAppointment = intent.getStringExtra(SeleccionarTurnoActivity.KEY_TURNO);
 
         TextView txtTurno = (TextView) findViewById( R.id.lblTurno);

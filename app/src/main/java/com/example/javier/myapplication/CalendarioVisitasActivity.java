@@ -2,10 +2,12 @@ package com.example.javier.myapplication;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -81,11 +83,20 @@ public class CalendarioVisitasActivity extends AppCompatActivity {
             }
         });
 
-        Button btnCancelar = (Button) findViewById(R.id.btnCancelar);
+        Button btnCancelar = findViewById(R.id.btnCancelar);
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 cancelarTurno(view);
+            }
+        });
+
+        ImageView imageBig = findViewById(R.id.imageViewBig);
+        imageBig.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://www.bigdiseno.com/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
     }
@@ -115,9 +126,6 @@ public class CalendarioVisitasActivity extends AppCompatActivity {
                         });
                 alertDialog.show();
             } else if(turnoViewSelected.get("COLUMNA_4").equals("Solicitado")) {
-                /*CancelDialog viewCancel = new CancelDialog();
-                viewCancel.show*/
-
                 // Build an AlertDialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(CalendarioVisitasActivity.this);
 
@@ -219,6 +227,7 @@ public class CalendarioVisitasActivity extends AppCompatActivity {
         temp6.put("COLUMNA_4", "Confirmado");
         list.add(temp6);
 
+        /*NO SOPORTA MAS DE 7 elementos VER
         HashMap temp7 = new HashMap();
         temp7.put("COLUMNA_1","13/11/18");
         temp7.put("COLUMNA_2", "11:20");
@@ -231,6 +240,6 @@ public class CalendarioVisitasActivity extends AppCompatActivity {
         temp8.put("COLUMNA_2", "11:20");
         temp8.put("COLUMNA_3", "Mario Malassi");
         temp8.put("COLUMNA_4", "Confirmado");
-        list.add(temp8);
+        list.add(temp8);*/
     }
 }

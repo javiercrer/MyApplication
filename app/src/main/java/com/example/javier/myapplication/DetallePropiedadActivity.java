@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -22,17 +23,25 @@ public class DetallePropiedadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_propiedad);
 
+        ImageView imageViewInicio = findViewById(R.id.imageViewInicio);
+        imageViewInicio.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), InstitutoActivity.class);
+                startActivity(intent);
+            }
+        });
+
         propiedadDTO = new PropiedadDTO();
         propiedadDTO.setDireccion("Blanque 1410");
         propiedadDTO.setLocalidad("Rosario");
         propiedadDTO.setDescripcion("La mansion blanque");
 
         TextView direccion = (TextView) findViewById(R.id.itemDireccion);
-        direccion.setText(propiedadDTO.getDireccion());
-        TextView localidad = (TextView) findViewById(R.id.itemLocalidad);
+        direccion.setText(propiedadDTO.getDireccion() + " - " + propiedadDTO.getLocalidad());
+        /*TextView localidad = (TextView) findViewById(R.id.itemLocalidad);
         localidad.setText(propiedadDTO.getLocalidad());
         TextView descripcion = (TextView) findViewById(R.id.itemDescripcion);
-        descripcion.setText(propiedadDTO.getDescripcion());
+        descripcion.setText(propiedadDTO.getDescripcion());*/
 
         LinearLayout linearLayout = (LinearLayout)findViewById(R.id.linearLayoutPropiedad);
         linearLayout.setOnClickListener(new View.OnClickListener() {

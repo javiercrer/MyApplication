@@ -14,4 +14,13 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         app:srcCompat="@drawable/ic_big" />
+
+    <Button
+        android:id="@+id/btnPropiedadCerca"
+        android:layout_width="179dp"
+        android:layout_height="106dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="78dp"
+        android:text="NUEVA PROPIEDAD CERCA" />
 </RelativeLayout>
